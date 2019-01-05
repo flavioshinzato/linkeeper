@@ -1,12 +1,12 @@
 export class LinkModel {
     title: string;
     url: string;
-    player: string;
+    category: string;
 
     constructor() {
         this.title = "";
         this.url = "";
-        this.player = "";
+        this.category = "";
     }
 }
 
