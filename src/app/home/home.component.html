@@ -1,10 +1,12 @@
-<ul>
-    <li *ngFor="let link of links">
-      <a>{{ link.title }}</a>
-  
-      <ul>
-        <li><a href="{{ link.url }}">{{ link.url }}</a></li>
-        <li>{{ link.category }}</li>
-      </ul>
-    </li>
-</ul>
+<div>
+  <ul>
+      <li *ngFor="let link of linksList">
+        <a>{{ link.title }}</a>
+    
+        <ul>
+          <li><a href="{{ link.url }}">{{ link.url }}</a></li>
+          <li>{{ link.category }}</li>
+        </ul>
+      </li>
+  </ul>
+</div>
