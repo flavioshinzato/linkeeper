@@ -1,4 +1,4 @@
-<form #cadastroForm="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+<form #cadastroForm="ngForm" (ngSubmit)="saveLink(cadastroForm)" novalidate>
   Título:<br>
   <input name="title" ngModel required #title="ngModel"><br>
   Link:<br>

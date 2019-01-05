@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import { Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,13 +9,14 @@ import {NgForm} from '@angular/forms';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
-  onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+  saveLink(f: NgForm) {
+    
   }
 }
