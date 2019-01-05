@@ -1,3 +1,10 @@
-<p>
-  cadastro works!
-</p>
+<form #cadastroForm="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  Título:<br>
+  <input name="title" ngModel required #title="ngModel"><br>
+  Link:<br>
+  <input name="link" ngModel required #link="ngModel"><br>
+  Categoria:<br>
+  <input name="category" ngModel><br>
+  <button>Submit</button>
+</form>
+

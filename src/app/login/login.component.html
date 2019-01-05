@@ -1,0 +1,19 @@
+<p>Login</p>
+<form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm)" novalidate>
+    E-mail:<br>
+    <input name="email" ngModel required #name="ngModel"><br>
+    Senha:<br>
+    <input type="password" name="password" ngModel required #password="ngModel"><br>
+    <button>Login</button>
+</form>
+<br>
+<br>
+<p>Não é cadastrado?</p>
+<form #registerForm="ngForm" (ngSubmit)="onSubmitRegister(registerForm)" novalidate>
+    E-mail:<br>
+    <input name="email" ngModel required #name="ngModel"><br>
+    Senha:<br>
+    <input type="password"  name="password" ngModel required #password="ngModel"><br>
+    <button>Cadastrar</button>
+</form>
+
