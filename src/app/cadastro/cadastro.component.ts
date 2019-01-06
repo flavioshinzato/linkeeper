@@ -32,6 +32,10 @@ export class CadastroComponent implements OnInit {
       console.log(f)
       console.log(newLink)
       
+      if(this.linksList == undefined) {
+        this.linksList = []
+      }
+      
       this.linksList.push(newLink);
 
       this.db.collection("links").doc(localStorage.getItem('uid')).set({

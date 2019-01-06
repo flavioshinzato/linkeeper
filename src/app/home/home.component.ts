@@ -32,5 +32,23 @@ export class HomeComponent implements OnInit {
     })
   
   }
+
+  removeLink(i) {
+    this.db.collection("links").doc(localStorage.getItem('uid')).get().subscribe(data => {
+      this.linksList = data.get('links')
+
+      this.linksList.splice(i, 1)
+
+      this.db.collection("links").doc(localStorage.getItem('uid')).set({
+        links: this.linksList
+      }).then(res => {
+        this.router.navigate(['/home']);
+      }, err => {
+        console.log(err);
+      })
+
+    })
+
+  }
   
 }
