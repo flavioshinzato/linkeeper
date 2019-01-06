@@ -15,6 +15,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 
 import {AuthService } from './services/auth/auth.service';
+import {MatCardModule} from '@angular/material/card';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import {AuthService } from './services/auth/auth.service';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    MatCardModule,
+    MaterialModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
