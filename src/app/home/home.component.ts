@@ -12,7 +12,8 @@ import { AuthService } from '../services/auth/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  linksList: LinkModel[] = [];
+  linksList: LinkModel[] = []
+  searchText : string
 
   constructor(
     private router: Router,
@@ -52,10 +53,14 @@ export class HomeComponent implements OnInit {
   }
 
   searchLink(input) {
-      this.linksList.filter(link => {
-      return (link.title == input || link.category == input)
-    })
-    
-  }
+    this.linksList.filter(link => {
+    return (link.title == input || link.category == input)
+  })
+  
+}
+
+cleanSearchInput() {
+  this.searchText = ""
+}
   
 }

@@ -1,11 +1,14 @@
 <div>
-    <div class="search-bar mb-3">
-        <input type="text" class="form-control" placeholder="Pesquise aqui" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <button  (click)="cleanSearchInput()" class="btn btn-outline-secondary" type="button" id="button-addon1">Limpar</button>
+      </div>
+      <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Pesquise aqui" aria-label="Recipient's username" aria-describedby="button-addon1">
     </div>
 </div>
   
 <div>
-  <mat-card class="link-card" *ngFor="let link of linksList; let i = index">
+  <mat-card class="link-card" *ngFor="let link of linksList | linkSearch: searchText">
       <mat-card-header>
         <mat-card-title>{{ link.title }}</mat-card-title>
         <mat-card-subtitle>{{ link.category }}</mat-card-subtitle>

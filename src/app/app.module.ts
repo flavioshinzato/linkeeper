@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import {AuthService } from './services/auth/auth.service';
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LinkSearchPipe } from './pipes/link-search.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     CadastroComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    LinkSearchPipe
   ],
   imports: [
     BrowserModule,
