@@ -50,5 +50,12 @@ export class HomeComponent implements OnInit {
     })
 
   }
+
+  searchLink(input) {
+      this.linksList.filter(link => {
+      return (link.title == input || link.category == input)
+    })
+    
+  }
   
 }

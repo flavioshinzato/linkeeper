@@ -16,7 +16,6 @@ import { environment } from '../environments/environment';
 
 import {AuthService } from './services/auth/auth.service';
 import {MatCardModule} from '@angular/material/card';
-import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -35,7 +34,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFirestoreModule,
     AngularFireAuthModule,
     MatCardModule,
-    MaterialModule,
     BrowserAnimationsModule,
   ],
   providers: [AuthService],
