@@ -60,5 +60,17 @@ export class AuthService {
       })
   }
 
-  /*TODO logout sem esquecer de limpar o storage*/
+  doLogout(){
+    return new Promise((resolve, reject) => {
+      if(firebase.auth().currentUser){
+        this.Auth.auth.signOut()
+        localStorage.removeItem("uid")
+        resolve();
+      }
+      else{
+        reject();
+      }
+    });
+  }
+
 }

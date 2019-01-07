@@ -10,6 +10,9 @@ import { AuthService } from '../services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  login: Boolean = true
+  register: Boolean = false
+  
   constructor(
     public authService: AuthService,
     private router: Router
@@ -36,5 +39,14 @@ export class LoginComponent implements OnInit {
     }, err => {
       console.log(err);
     })
+  }
+  showRegisterForm() {
+    this.login = false
+    this.register = true
+  }
+
+  showLoginForm() {
+    this.login = true
+    this.register = false
   }
 }

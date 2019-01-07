@@ -1,19 +1,24 @@
-<p>Login</p>
-<form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm)" novalidate>
-    E-mail:<br>
-    <input name="email" ngModel required #name="ngModel"><br>
-    Senha:<br>
-    <input type="password" name="password" ngModel required #password="ngModel"><br>
-    <button>Login</button>
+<form *ngIf="login" #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm)" novalidate>
+    <div class="form-group">
+        <h3>Logar</h3>
+        <label for="inputEmail1">Email</label>
+        <input type="email" class="form-control" id="inputEmail1" name="email" placeholder="Digite seu email" ngModel required #name="ngModel"><br>
+        <label for="inputPassword1">Senha</label>
+        <input type="password" class="form-control" id="inputPassword1" name="password" placeholder="Digite sua senha" ngModel required #password="ngModel"><br>
+        <div><button type="submit" class="btn btn-primary">Login</button></div>
+        <button type="button" class="btn btn-link" (click)="showRegisterForm()">Não é cadastrado?</button>
+    </div>
 </form>
-<br>
-<br>
-<p>Não é cadastrado?</p>
-<form #registerForm="ngForm" (ngSubmit)="onSubmitRegister(registerForm)" novalidate>
-    E-mail:<br>
-    <input name="email" ngModel required #name="ngModel"><br>
-    Senha:<br>
-    <input type="password"  name="password" ngModel required #password="ngModel"><br>
-    <button>Cadastrar</button>
+<form *ngIf="register" #registerForm="ngForm" (ngSubmit)="onSubmitRegister(registerForm)" novalidate>
+    <div class="form-group">
+        <h3>Cadastrar</h3>
+        <label for="inputEmail2">Email</label>
+        <input type="email" class="form-control" id="inputEmail1" name="email" placeholder="Digite seu email" ngModel required #name="ngModel"><br>
+        <label for="inputPassword2">Senha</label>
+        <input type="password" class="form-control" id="inputPassword2" name="password" placeholder="Digite uma senha" ngModel required #password="ngModel"><br>
+        <div><button type="submit" class="btn btn-primary">Cadastrar</button></div>
+        <button type="button" class="btn btn-link" (click)="showLoginForm()">Já é cadastrado?</button>
+    </div>
 </form>
-
+    
+    
