@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
     this.db.collection("links").doc(localStorage.getItem('uid')).set({
       links: this.linksList
     }).then(res => {
+      this.cleanSearchInput()
       this.router.navigate(['/home'])
     }, err => {
       console.log(err);
