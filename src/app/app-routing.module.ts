@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -7,8 +7,9 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: '',
-    component: LoginComponent
+    path: '', 
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
     path: 'login',
@@ -25,6 +26,10 @@ const routes: Routes = [
     component: CadastroComponent,
     canActivate: [AuthGuard],
     canLoad: [AuthGuard]
+  },
+  {
+    path: '**',
+    redirectTo: '/home'
   }
 ];
 
