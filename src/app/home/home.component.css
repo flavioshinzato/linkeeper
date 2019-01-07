@@ -1,9 +1,9 @@
 .link-card {
-    width: 400px;
     margin: 2em auto;
     display: -webkit-inline-flex;
     display: inline-flex;
     -webkit-flex-direction: column;
     flex-direction:         column;
     margin: 10px;
+    min-width: 400px;
 }

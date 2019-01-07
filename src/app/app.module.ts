@@ -15,6 +15,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 
 import {AuthService } from './services/auth/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LinkSearchPipe } from './pipes/link-search.pipe';
@@ -38,7 +39,7 @@ import { LinkSearchPipe } from './pipes/link-search.pipe';
     MatCardModule,
     BrowserAnimationsModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
@@ -9,6 +9,9 @@ import { LinkModel } from 'src/app/model/link.model';
   providedIn: 'root'
 })
 export class AuthService {
+  
+  isAuthenticatedEmitter = new EventEmitter<boolean>();
+  isAuthenticated = false
 
   constructor(
     private router: Router,
@@ -71,6 +74,19 @@ export class AuthService {
         reject();
       }
     });
+  }
+
+  getAuthenticationStatus() {
+    return new Promise((resolve, reject) => {
+      this.getCurrentUser()
+      .then(user => {
+        this.isAuthenticatedEmitter.emit(true)
+        return resolve(true);
+      }, err => {
+        this.isAuthenticatedEmitter.emit(false)
+        return resolve(false);
+      })
+    })
   }
 
 }
