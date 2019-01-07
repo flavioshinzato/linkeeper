@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   login: Boolean = true
   register: Boolean = false
-  
+
   constructor(
     public authService: AuthService,
     private router: Router
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     console.log(f.value.email , f.value.password);
     this.authService.doRegister(f.value.email , f.value.password)
     .then(res => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }, err => {
       console.log(err);
     })

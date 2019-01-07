@@ -41,7 +41,7 @@ export class CadastroComponent implements OnInit {
       this.db.collection("links").doc(localStorage.getItem('uid')).set({
         links: this.linksList
       }).then(res => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }, err => {
         console.log(err);
       })
